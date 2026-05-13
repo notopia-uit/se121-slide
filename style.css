@@ -1,0 +1,21 @@
+/* Shared Card Styles */
+.slidev-card {
+  @apply bg-slate-50/80 dark:bg-slate-800/50 
+         rounded-xl border border-slate-200/60 dark:border-slate-700/50 
+         shadow-sm transition-all duration-300 hover:shadow-md;
+}
+
+.slidev-card-title {
+  @apply text-slate-900 dark:text-slate-50 font-bold;
+}
+
+.slidev-card-text {
+  @apply text-slate-600 dark:text-slate-300;
+}
+
+/* Button Styles */
+.slidev-btn {
+  @apply px-3 py-1 rounded-md bg-slate-200 dark:bg-slate-700 
+         text-slate-700 dark:text-slate-200
+         transition-colors hover:bg-slate-300 dark:hover:bg-slate-600;
+}

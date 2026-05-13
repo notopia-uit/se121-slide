@@ -1,0 +1,21 @@
+{
+  "name": "@notopia-uit/se332-slide",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.15.2",
+    "slidev-theme-academic": "2.1.0",
+    "vue": "3.5.33"
+  },
+  "devDependencies": {
+    "prettier-plugin-slidev": "1.0.5",
+    "prettier": "3.8.3",
+    "playwright-chromium": "1.60.0"
+  },
+  "packageManager": "pnpm@10.33.4"
+}
