@@ -32,6 +32,8 @@ const logos = [
   { name: 'Redpanda', src: '/redpanda-logo.svg' },
   { name: 'RustFS', src: '/rustfs-logo.svg' },
   { name: 'Nx', src: '/nx-logo.svg' },
+  { name: 'Oxc', src: '/oxc-logo.svg' },
+  { name: 'Rspack', src: '/rspack-logo.svg' },
 
   { name: 'OpenTelemetry', src: '/opentelemetry-logo.svg' },
   { name: 'Prometheus', src: '/prometheus-logo.svg' },
