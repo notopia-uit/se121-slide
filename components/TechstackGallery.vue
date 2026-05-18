@@ -8,7 +8,7 @@ const logos = [
 
   { name: 'Yjs', src: 'yjs-logo.svg' },
   { name: 'ProseMirror', src: 'prosemirror-logo.svg' },
-  { name: 'Tiptap  Hocuspocus', src: '/tiptap-logo.svg' },
+  { name: 'Tiptap - Hocuspocus', src: 'tiptap-logo.svg' },
   { name: 'Blocknote', src: 'blocknote-logo.svg' },
 
   { name: 'Watermill', src: 'watermill-logo.svg' },
