@@ -7,6 +7,8 @@ transition: slide-up
 ## Technology
 
 ---
+hideInToc: true
+---
 
 ### Technology
 

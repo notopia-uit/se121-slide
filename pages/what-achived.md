@@ -11,6 +11,8 @@ transition: slide-up
 -->
 
 ---
+hideInToc: true
+---
 
 ## Core Achievements
 
@@ -41,6 +43,8 @@ Nhóm đặc biệt dành thời gian để nghiên cứu cách tổ chức mono
 -->
 
 ---
+hideInToc: true
+---
 
 ## Key Strengths
 
@@ -70,6 +74,8 @@ Mã nguồn cũng rất dễ bảo trì nhờ áp dụng các pattern như Clean
 -->
 
 ---
+hideInToc: true
+---
 
 ## Challenges Overcome
 
@@ -98,13 +104,39 @@ Ngoài ra, việc tích hợp và tùy biến các thư viện như BlockNote ha
 -->
 
 ---
+hideInToc: true
+---
+
+## What Need to be Improved
+
+<CardRow :items="[
+  {
+    title: 'UI/UX Polish',
+    content: 'Refining the interface and user experience to ensure a smoother, more intuitive workflow',
+    icon: 'i-carbon-user-favorite'
+  },
+  {
+    title: 'Production Readiness',
+    content: 'Standardizing health checks across all services and implementing final production-grade optimizations',
+    icon: 'i-carbon-deploy'
+  },
+]" />
+
+<!--
+Trải nghiệm UI UX chưa được tối ưu, vẫn còn nhiều điểm chưa thân thiện với người dùng.
+Chưa hoàn toàn thiết lập production ready, như health check endpoint chỉ có ở các service go, chưa có ở NestJS hay NextJS web.
+-->
+
+---
+hideInToc: true
+---
 
 ## Future Directions
 
 <CardRow :items="[
   {
-    title: 'AI Integration',
-    content: 'Implementing AI-powered editing and hybrid search for intelligent knowledge management',
+    title: 'Features Expansion, UI/UX Improvements',
+    content: 'Implementing AI-powered editing and hybrid search for intelligent knowledge management. Enhancing UI/UX for better user experience',
     icon: 'i-carbon-bot'
   },
   {
@@ -120,7 +152,11 @@ Ngoài ra, việc tích hợp và tùy biến các thư viện như BlockNote ha
 ]" />
 
 <!--
-Trong tương lai, nhóm dự kiến sẽ tích hợp thêm AI vào editor để hỗ trợ người dùng tốt hơn.
+Trong tương lai, nhóm dự kiến sẽ tối ưu và mở rộng tính năng (publish, unpublish a note/workspace), cải thiện UI/UX,
+cũng như tích hợp thêm AI vào editor để hỗ trợ người dùng tốt hơn.
+
 Về hạ tầng, hệ thống sẽ được chuyển dịch sang Kubernetes với Istio Gateway để tận dụng các tính năng Service Mesh.
-Thực hiện các tính năng thương mại hóa như mô hình subscription để tự động commit document, vì quá trình này tốn nhiều tài nguyên để sync qua Search Service, cũng như các tính năng khác.
+
+Thực hiện các tính năng thương mại hóa như mô hình subscription để tự động commit document,
+vì quá trình này tốn nhiều tài nguyên để sync qua Search Service, cũng như các tính năng khác.
 -->

@@ -43,5 +43,9 @@ src: ./pages/technology.md
 ---
 
 ---
+src: ./pages/setup.md
+---
+
+---
 src: ./pages/what-achived.md
 ---
