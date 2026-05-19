@@ -55,7 +55,7 @@ layout: two-cols
 }
 ```
 
-::left::
+::right::
 
 ```json
 {
