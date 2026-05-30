@@ -8,7 +8,7 @@ transition: slide-up
 
 ---
 hideInToc: true
-layout: figure-side
+layout: figure
 figureUrl: github-pr-with-ai.png
 figureCaption: 'GitHub PR with AI'
 ---
@@ -17,7 +17,7 @@ figureCaption: 'GitHub PR with AI'
 
 ---
 hideInToc: true
-layout: figure-side
+layout: figure
 figureUrl: coderabbit-changestack-1.png
 figureCaption: 'Coderabbit Change stack'
 ---
@@ -26,7 +26,7 @@ figureCaption: 'Coderabbit Change stack'
 
 ---
 hideInToc: true
-layout: figure-side
+layout: figure
 figureUrl: coderabbit-changestack-2.png
 figureCaption: 'Coderabbit Change stack - continue'
 ---
