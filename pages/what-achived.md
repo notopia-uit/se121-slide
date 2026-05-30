@@ -155,6 +155,8 @@ hideInToc: true
 Trong tương lai, nhóm dự kiến sẽ tối ưu và mở rộng tính năng (publish, unpublish a note/workspace), cải thiện UI/UX,
 cũng như tích hợp thêm AI vào editor để hỗ trợ người dùng tốt hơn.
 
+Refactor kiến trúc frontend
+
 Về hạ tầng, hệ thống sẽ được chuyển dịch sang Kubernetes với Istio Gateway để tận dụng các tính năng Service Mesh.
 
 Thực hiện các tính năng thương mại hóa như mô hình subscription để tự động commit document,

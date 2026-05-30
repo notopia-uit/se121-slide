@@ -47,5 +47,9 @@ src: ./pages/setup.md
 ---
 
 ---
+src: ./pages/dev-process.md
+---
+
+---
 src: ./pages/what-achived.md
 ---
