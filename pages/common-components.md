@@ -10,12 +10,16 @@ transition: slide-up
 hideInToc: true
 ---
 
-### Thư viện Shadcn UI
+### Shadcn UI
 
-- **Shadcn UI** là bộ sưu tập components tái sử dụng, built trên **Radix UI** + **Tailwind CSS**
-- Không phải package — copy code trực tiếp vào project, toàn quyền custom
-- Dùng cho hầu hết UI components trong app: Button, Input, Dialog, Context Menu, Command, Sheet, ...
-- Hỗ trợ **server component**, **dark mode**, **theming** qua CSS variables
+- A collection of reusable components built on **Radix UI** + **Tailwind CSS**
+- Not a package — copy code directly into project, full customization control
+- Used for most UI components: **Button**, **Input**, **Dialog**, **Context Menu**, **Command**, **Sheet**, ...
+- Supports **server components**, **dark mode**, **theming** via CSS variables
+
+<!--
+Shadcn UI built trên Radix UI + Tailwind CSS. Không phải package — copy code trực tiếp vào project, toàn quyền custom. Hỗ trợ server component, dark mode, theming qua CSS variables.
+-->
 
 ---
 hideInToc: true
@@ -24,27 +28,33 @@ figureUrl: ui-landing-page.png
 figureCaption: 'Giao diện sử dụng Shadcn Components'
 ---
 
-### Giao diện sử dụng Shadcn Components
+### Interface using Shadcn Components
 
 ---
+
 hideInToc: true
 ---
 
-### Ưu & Nhược điểm
+### Advantages & Disadvantages
 
 <br/>
 
-#### Ưu điểm ✅
+#### Advantages ✅
 
-- **Accessibility** sẵn có nhờ Radix UI (keyboard nav, focus management, ARIA)
-- **Customizable** hoàn toàn — copy code, sửa trực tiếp, không bị lock vào API
-- **Tree-shakeable** — chỉ bundle components được import
-- **Theming linh hoạt** qua CSS variables, dễ dàng dark/light mode
-- **Cập nhật theo version** — có CLI update command
+- **Accessibility** — built-in via Radix UI (keyboard nav, focus management, ARIA)
+- **Fully customizable** — copy code, modify directly, no API lock-in
+- **Tree-shakeable** — only bundle components you import
+- **Flexible theming** — CSS variables for easy dark/light mode
+- **Version updates** — CLI update command available
 
-#### Nhược điểm ❌
+#### Disadvantages ❌
 
-- **Không có sẵn** complex components (table, tree view, data grid) — phải tự build
-- **Bundle size** phụ thuộc vào số components dùng (dù chỉ copy code cần thiết)
-- **Phụ thuộc vào Radix UI** — nếu Radix thay đổi API, components phải update theo
-- **Không phải component library truyền thống** — dev cần hiểu cấu trúc để custom sâu
+- **Missing complex components** — table, tree view, data grid must be built manually
+- **Bundle size** — depends on number of components used
+- **Radix dependency** — API changes require component updates
+- **Not a traditional library** — developers need to understand structure for deep customization
+
+<!--
+Ưu điểm: Accessibility nhờ Radix UI, customizable hoàn toàn, tree-shakeable, theming linh hoạt qua CSS variables, có CLI update.
+Nhược điểm: Không có sẵn complex components, bundle size phụ thuộc số components, phụ thuộc Radix UI API, không phải library truyền thống — dev cần hiểu cấu trúc.
+-->

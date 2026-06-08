@@ -15,52 +15,28 @@ figureCaption: 'React Complex Tree - Thư viện Tree View cho React'
 
 ### react-complex-tree
 
-- **react-complex-tree** — thư viện tree view cho React, hỗ trợ đầy đủ drag & drop, keyboard nav, search
-- Shadcn UI **không có** File Tree component — issue [#355](https://github.com/shadcn-ui/ui/issues/355)
-- react-complex-tree **không tương thích** với Shadcn styling mặc định
-- Giải pháp: dùng **ControlledTreeEnvironment** để custom render
+- A React tree view library with full **drag & drop**, **keyboard nav**, **search**
+- Shadcn UI **does not have** a File Tree component — [issue #355](https://github.com/shadcn-ui/ui/issues/355)
+- **Not compatible** with Shadcn styling out of the box
+- Solution: use **ControlledTreeEnvironment** for custom rendering
+
+<!--
+react-complex-tree là thư viện tree view. Shadcn không có File Tree component. Giải pháp: dùng ControlledTreeEnvironment để custom render, kết hợp Shadcn Button/ContextMenu cho styling đồng bộ.
+-->
 
 ---
 hideInToc: true
 ---
 
-### ControlledTreeEnvironment — Code Example
+### ControlledTreeEnvironment
 
-```tsx
-<ControlledTreeEnvironment<string>
-  items={items}
-  getItemTitle={(item) => item.data}
-  canDragAndDrop={true}
-  canReorderItems={true}
-  canDropOnFolder={true}
-  canRename={true}
-  viewState={viewState}
-  onDrop={onDrop}
-  onRenameItem={(item, name) => {
-    /* rename logic */
-  }}
-  renderItem={({ title, item, arrow, context, depth, children }) => (
-    <li {...context.itemContainerWithChildrenProps}>
-      <Button
-        {...context.interactiveElementProps}
-        style={{
-          paddingLeft: `${item.isFolder ? depth * 10 : depth * 10 + 16}px`,
-        }}
-      >
-        {item.isFolder && arrow}
-        {title}
-      </Button>
-      {children}
-    </li>
-  )}
->
-  <Tree treeId="tree-sample" rootItem={rootId} treeLabel="Tree" />
-</ControlledTreeEnvironment>
-```
-
-- **ControlledTreeEnvironment** — wrapper quản lý state tree tập trung
+- Wrapper managing centralized tree state
 - `renderItem`, `renderItemArrow`, `renderItemTitle` — custom render functions
-- Kết hợp Shadcn `Button`, `ContextMenu` để styling đồng bộ
+- Combine with Shadcn `Button`, `ContextMenu` for consistent styling
+
+<!--
+ControlledTreeEnvironment là wrapper quản lý state tập trung. Các custom render functions cho phép styling tùy ý, kết hợp với Shadcn Button, ContextMenu.
+-->
 
 ---
 hideInToc: true
@@ -79,32 +55,30 @@ type TreeItem<T> = {
 };
 ```
 
-```ts
-// Map từ API response sang TreeData
-const mapDtoTreeData = (rootFolder: NoteWorkspaceTreeFolder) => {
-  const tree: TreeData = {};
-  const traverse = (node, isFolder) => {
-    tree[node.id] = { index: node.id, data: node.name, isFolder };
-    if (isFolder) node.children?.forEach((c) => traverse(c, true));
-  };
-  traverse(rootFolder, true);
-  return { treeData: tree, rootId: rootFolder.id };
-};
-```
+- Map from API `NoteWorkspaceTreeFolder` → `TreeData`
+- Recursive traversal builds flat tree structure
+
+<!--
+Model dữ liệu dạng flat: TreeData là Record, mỗi TreeItem có index, data, isFolder, children. mapDtoTreeData chuyển từ API response sang TreeData bằng duyệt đệ quy.
+-->
 
 ---
 hideInToc: true
 ---
 
-### TreeView Features
+### Key Features
 
-- **Drag & Drop** — kéo thả folder/note giữa các thư mục
-- **Rename** — inline rename với context menu
-- **Search** — tìm kiếm node theo tên, auto expand path
+- **Drag & Drop** — move folders/notes between directories
+- **Rename** — inline rename via context menu
+- **Search** — find nodes by name, auto-expand path
 - **Context Menu** — New Note, New Folder, Move to Trash
-- **Keyboard Navigation** — arrow keys, Enter để mở note
-- **Auto Expand** — expand parent khi tạo item mới
+- **Keyboard Navigation** — arrow keys, Enter to open
+- **Auto Expand** — expand parent when creating items
 - **Real-time sync** — subscribe workspace events → invalidate query
+
+<!--
+Drag & Drop kéo thả folder/note giữa các thư mục. Rename inline với context menu. Search tự động expand path. Real-time sync subscribe workspace events và invalidate query.
+-->
 
 ---
 hideInToc: true
@@ -113,28 +87,34 @@ figureUrl: ui/workspace-page.png
 figureCaption: 'Giao diện Tree View'
 ---
 
-### Giao diện Tree View
+### Tree View Interface
 
 ---
+
 hideInToc: true
 ---
 
-### Ưu & Nhược điểm
+### Advantages & Disadvantages
 
 <br/>
 
-#### Ưu điểm ✅
+#### Advantages ✅
 
-- **API giàu tính năng** — drag & drop, rename, search, keyboard nav out-of-the-box
-- **Custom render linh hoạt** — `renderItem`, `renderItemArrow` cho phép styling tùy ý
-- **Controlled/Uncontrolled** — hỗ trợ cả 2 mode
-- **TreeDataProvider** — có thể async load data, lazy loading
-- **Tương thích TypeScript** — full type safety
+- **Feature-rich API** — drag & drop, rename, search, keyboard nav out of the box
+- **Flexible custom render** — `renderItem`, `renderItemArrow` for custom styling
+- **Controlled/Uncontrolled** — supports both modes
+- **TreeDataProvider** — async data loading, lazy loading
+- **TypeScript compatible** — full type safety
 
-#### Nhược điểm ❌
+#### Disadvantages ❌
 
-- **Không compatible với Shadcn** — must use `ControlledTreeEnvironment` thay vì Shadcn styling thuần
+- **Not Shadcn compatible** — must use `ControlledTreeEnvironment`
 - **Bundle size** — ~15-20kB gzipped
-- **Maintenance** — thư viện ít phổ biến, ít contributor
-- **Learning curve** — ControlledTreeEnvironment API khá phức tạp
-- **Accessibility** — không mạnh bằng Radix UI components
+- **Low popularity** — fewer contributors, less community support
+- **Learning curve** — ControlledTreeEnvironment API is complex
+- **Accessibility** — weaker than Radix UI components
+
+<!--
+Ưu điểm: API giàu tính năng, custom render linh hoạt, hỗ trợ controlled/uncontrolled, có TreeDataProvider cho lazy loading, full TypeScript.
+Nhược điểm: Không compatible với Shadcn, bundle size ~15-20kB, thư viện ít phổ biến, learning curve cao, accessibility không mạnh bằng Radix.
+-->
