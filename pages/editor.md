@@ -23,6 +23,7 @@ figureCaption: Yjs Logo
 
 <!--
 Yjs đóng vai trò là "lõi" của tính năng cộng tác, giúp việc đồng bộ hóa dữ liệu trở nên đơn giản và tin cậy.
+Yjs implement theo thuật toán YATA (Yet Another Transformation Approach)
 
 Khi làm việc với Yjs, mình thao tác với YDoc, Shared Data Types (Array, Map, Text, XML), và Providers (WebSocket, WebRTC, etc.) để đồng bộ hóa dữ liệu giữa các client.
 
