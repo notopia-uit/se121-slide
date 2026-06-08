@@ -58,6 +58,10 @@ graph TD
   Note[Logic: 'ID 101 always comes before 102, \nno matter when they arrive']
 ```
 
+<!--
+Deterministic merge: Các thao tác được gán ID duy nhất và được sắp xếp theo thứ tự ID, đảm bảo rằng tất cả các bản sao sẽ đồng ý về thứ tự của các thao tác, bất kể chúng đến khi nào.
+-->
+
 ---
 hideInToc: true
 layout: figure
@@ -85,6 +89,13 @@ hideInToc: true
    $$
    f(f(state)) = f(state)
    $$
+
+<!--
+Các tính chất của CRDTs:
+1. Giao hoán: Thứ tự của các thao tác không ảnh hưởng đến trạng thái cuối cùng
+2. Kết hợp: Cách nhóm các thao tác không ảnh hưởng đến trạng thái cuối cùng
+3. Idempotent (tính lũy đẳng): Áp dụng cùng một thao tác nhiều lần có cùng hiệu quả như áp dụng nó một lần
+-->
 
 ---
 layout: two-cols-header
