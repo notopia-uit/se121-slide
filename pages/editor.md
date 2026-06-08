@@ -22,8 +22,13 @@ figureCaption: Yjs Logo
 - Disadvantages: Higher memory consumption due to storing metadata for each data element.
 
 <!--
-Yjs đóng vai trò là "trái tim" của tính năng cộng tác, giúp việc đồng bộ hóa dữ liệu trở nên đơn giản và tin cậy.
-yjs tốn bộ nhớ hơn so với các giải pháp khác, nhưng thực sự không đáng lo ngại
+Yjs đóng vai trò là "lõi" của tính năng cộng tác, giúp việc đồng bộ hóa dữ liệu trở nên đơn giản và tin cậy.
+
+Khi làm việc với Yjs, mình thao tác với YDoc, Shared Data Types (Array, Map, Text, XML), và Providers (WebSocket, WebRTC, etc.) để đồng bộ hóa dữ liệu giữa các client.
+
+Yjs tốn bộ nhớ hơn so với các giải pháp khác, nhưng thực sự không đáng lo ngại (có bài blog so sánh, benchmark).
+
+Yjs insert là operation based CDRT, nhưng delete là state based CRDT. Được mark là đã bị xoá, và được garbage collector xoá sau một thời gian.
 -->
 
 ---
@@ -41,10 +46,14 @@ figureCaption: ProseMirror Logo
 - It is the foundation for many modern editors and serves as a binding layer for Yjs.
 
 <!--
-ProseMirror cung cấp nền tảng vững chắc nhất cho việc xử lý văn bản, đảm bảo dữ liệu luôn hợp lệ theo cấu trúc đã định nghĩa.
+ProseMirror cung cấp nền tảng cho việc xử lý văn bản, đảm bảo dữ liệu luôn hợp lệ theo cấu trúc đã định nghĩa.
+
+Làm việc với ProseMirror sẽ thao tác với Document Model (Node, Mark), State (EditorState), View (EditorView), và Transform (Step, Transaction) để quản lý và cập nhật nội dung.
+
 ProseMirror đã chuyển source code từ github sang https://code.haverbeke.berlin/prosemirror/
+
 Bên cạnh ProseMirror, còn có một số thư viện khác như Slate, Quill, Lexical bởi Meta,
-nhưng tiptap sử dụng ProseMirror làm nền tảng
+nhưng tiptap sử dụng ProseMirror làm nền tảng, và BlockNote sử dụng Tiptap.
 -->
 
 ---
@@ -64,7 +73,10 @@ figureCaption: Tiptap Logo
 <!--
 Headless có nghĩa là Tiptap không đi kèm với giao diện người dùng mặc định,
 cho phép các nhà phát triển tự do thiết kế trải nghiệm người dùng của riêng họ.
-Tiptap là lớp trung gian hoàn hảo, kết hợp sức mạnh của ProseMirror với sự tiện dụng của một framework hiện đại.
+
+Tiptap cung cấp một hệ thống Extension để mở rộng tính năng, Command để thao tác với editor state, và Event để lắng nghe các sự kiện trong editor.
+
+Các extension là bọc lại các Node, Mark, hoặc Plugin của ProseMirror; abstract Prosemirror.
 -->
 
 ---
@@ -81,6 +93,8 @@ hideInToc: true
 <!--
 Hocuspocus là giải pháp collab bởi Tiptap team.
 Hocuspocus giải quyết bài toán hạ tầng backend, giúp việc triển khai máy chủ cộng tác trở nên nhanh chóng và chuyên nghiệp.
+
+Hocuspocus có hệ thống extension linh hoạt, cho phép tích hợp với nhiều loại cơ sở dữ liệu (data được lưu là YDoc binary là chủ yếu) và giải pháp scale khác nhau.
 -->
 
 ---

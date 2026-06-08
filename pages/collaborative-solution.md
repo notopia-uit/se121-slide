@@ -19,6 +19,13 @@ hideInToc: true
 - Server required to manage operations and resolve conflicts
 - Scaling limit
 
+<!--
+Kỹ thuật đầu tiên cho chỉnh sửa cộng tác thời gian thực
+Được sử dụng trong Google Docs, Microsoft Office Online
+Yêu cầu máy chủ để quản lý các thao tác và giải quyết xung đột
+Giới hạn về khả năng mở rộng
+-->
+
 ---
 hideInToc: true
 layout: figure
@@ -27,6 +34,12 @@ figureCaption: 'CRDTs: The hard parts - https://youtu.be/x7drE24geUw?si=oQyxrZXk
 ---
 
 ### OT Google Docs
+
+<!--
+Khi cả 2 cùng insert cùng lúc, gửi đến server, server sẽ nhận được 2 thao tác insert, 
+và sẽ quyết định thứ tự của chúng dựa trên timestamp hoặc ID,
+transform thứ tự (index) sao cho hợp lý, sau đó gửi lại cho cả 2 client để đồng bộ hóa.
+-->
 
 ---
 hideInToc: true
@@ -40,7 +53,10 @@ hideInToc: true
 - Better scalability and offline support
 
 <!--
-Không cần điều phối
+Kỹ thuật mới hơn cho chỉnh sửa cộng tác thời gian thực
+Được sử dụng trong Automerge, yjs, loro,...
+Không cần máy chủ, đồng bộ ngang hàng (peer-to-peer)
+Khả năng mở rộng tốt hơn và hỗ trợ ngoại tuyến
 -->
 
 ---
@@ -59,7 +75,14 @@ graph TD
 ```
 
 <!--
-Deterministic merge: Các thao tác được gán ID duy nhất và được sắp xếp theo thứ tự ID, đảm bảo rằng tất cả các bản sao sẽ đồng ý về thứ tự của các thao tác, bất kể chúng đến khi nào.
+CRDT có nhiều thuật toán, nhưng chung quy là:
+
+Deterministic merge: Các thao tác được gán ID duy nhất và được sắp xếp theo thứ tự ID hay thời gian,
+đảm bảo rằng tất cả các bản sao sẽ đồng bộ hóa về cùng một trạng thái cuối cùng, bất kể thứ tự nhận được các thao tác.
+
+101 lúc nào cũng trước 102, bất kể khi nào chúng đến.
+Ví dụ đang trên máy bay offline soạn 12 tiếng, trong thời gian đó (về cuối) cũng có 1 người khác đã edit.
+Về nhà kết nối lại, sync, sẽ không bị xoá hết bởi người khác đã edit, cũng như sẽ được merge theo thứ tự của thuật toán.
 -->
 
 ---
@@ -116,13 +139,14 @@ hideInToc: true
 - Requires commutativity, associativity, idempotence
 
 <!--
-State-based CRDTs (còn gọi là kiểu dữ liệu nhân bản hội tụ, hoặc CvRDTs) được định nghĩa bởi hai kiểu,
+State-based CRDTs (hoặc CvRDTs) được định nghĩa bởi hai kiểu,
 một kiểu cho trạng thái cục bộ và một kiểu cho các hành động trên trạng thái, cùng với ba hàm:
 - một hàm để tạo ra trạng thái khởi tạo
-- một hàm hợp nhất các trạng thái,
-- và một hàm để áp dụng một hành động nhằm cập nhật trạng thái.
+- một hàm hợp nhất các trạng thái
+- và một hàm để áp dụng một hành động nhằm cập nhật trạng thái
+
 State-based CRDTs đơn giản là gửi toàn bộ trạng thái cục bộ của chúng đến các bản sao khác mỗi khi có cập nhật,
-nơi trạng thái mới nhận được sẽ được hợp nhất vào trạng thái cục bộ.
+nơi trạng thái mới nhận được sẽ được hợp nhất (merge) vào trạng thái cục bộ.
 -->
 
 #### Operation-based CRDTs (CmRDTs)
@@ -134,10 +158,13 @@ nơi trạng thái mới nhận được sẽ được hợp nhất vào trạng
 - Requires commutativity, associativity, and reliable delivery of operations
 
 <!--
-Các CRDT dựa trên thao tác (CmRDTs) được định nghĩa mà không cần hàm hợp nhất.
+Các CRDT dựa trên thao tác (CmRDTs) được định nghĩa mà không cần hàm hợp nhất (merge).
 Thay vì truyền trạng thái, các hành động cập nhật được truyền trực tiếp đến các bản sao và được áp dụng.
+
 Ví dụ, một CRDT dựa trên thao tác của một số nguyên đơn lẻ có thể phát tán các thao tác (+10) hoặc (−20).
-Việc áp dụng các thao tác vẫn phải giao hoán và kết hợp được.
-Tuy nhiên, thay vì yêu cầu việc áp dụng các thao tác là idempotent, cần có giả định mạnh hơn về hạ tầng truyền thông
-tất cả các thao tác phải được chuyển đến các bản sao khác mà không bị trùng lặp.
+Việc áp dụng các thao tác vẫn phải giao hoán và kết hợp được. +10 và −20 có thể được áp dụng theo bất kỳ thứ tự nào.
+
+Tuy nhiên, thay vì yêu cầu việc áp dụng các thao tác là idempotent, CmRDTs cần đảm bảo connection collab phải ổn định, tinh cậy. Thiếu là mất, khác với state mất thì merge state sau cũng được.
+
+Payload gửi đi nhỏ hơn State based.
 -->
