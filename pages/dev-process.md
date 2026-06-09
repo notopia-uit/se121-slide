@@ -32,6 +32,21 @@ layout: two-cols-header
 - Fixed OTEL issues on NestJS services
 - ✅Approximately 90% followed the original plan
 
+<!--
+Giữa kì:
+- Backend: ~70% done, Frontend: ~40% done
+- Frontend chưa được demo
+- OTEL không hoạt động trên NestJS services
+
+Cuối kì:
+- Backend: done, Frontend: ổn để có thể chạy, demo
+- Các tính năng cơ bản chạy
+- Tính năng Graph chạy, có thể customize
+- Tính năng Workspace Event (SSE), Collab được implement
+- Fix được OTEL trên NestJS services
+- ✅Khoảng 90% theo đúng kế hoạch ban đầu
+-->
+
 ---
 hideInToc: true
 layout: figure
