@@ -62,9 +62,12 @@ src: ./pages/tree-view.md
 src: ./pages/graph.md
 ---
 
+<!-- --- -->
+<!-- src: ./pages/ui-showcase.md -->
+
+<!--
 ---
-src: ./pages/ui-showcase.md
----
+-->
 
 ---
 src: ./pages/what-achived.md

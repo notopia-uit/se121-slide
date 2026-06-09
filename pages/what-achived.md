@@ -69,7 +69,8 @@ hideInToc: true
 ]" />
 
 <!--
-Hệ thống có ưu điểm vượt trội về hiệu năng nhờ vào ngôn ngữ Go xử lý biểu đồ rất nhanh.
+Hệ thống có sử dụng Go nên xử lý tạo graph là đã tối ưu. Render Graph ở frontend tương đối, không đến mức quá lag.
+
 Quy trình DevOps được tối ưu hóa tốt với Nx và giải pháp cache nhà trồng, giúp giảm thời gian build từ 25 phút xuống còn 30 giây trong trường hợp tối ưu.
 
 Ngoài ra việc setup editor để làm việc trong monorepo cũng phức tạp.
@@ -103,9 +104,11 @@ hideInToc: true
 ]" />
 
 <!--
-Nhóm đã phải vượt qua rào cản về công nghệ rất lớn khi học và áp dụng Microservices, Event-Driven, các thư viện Editor và Casbin cùng lúc.
-Việc tối ưu hóa tài nguyên cho các công cụ Enterprise-ready cũng là một thách thức lớn. Như Authentik có thể sử dụng lên đến 1.5GB RAM trong quá trình phát triển ở máy.
-Ngoài ra, việc tích hợp và tùy biến các thư viện như BlockNote hay xử lý dữ liệu từ Obsidian cũng tốn nhiều công sức, tuy nhiên cũng không được đúng chính xác vì quá trình transform chỉ parse bằng text, không phải bằng cây ngôn ngữ.
+Học và áp dụng Microservices, Event-Driven, các thư viện Editor và Casbin cùng lúc, khá khó.
+Authentik (production ready service) có thể sử dụng lên đến 1.5GB RAM trong quá trình phát triển ở máy.
+
+Ngoài ra, việc tích hợp và tùy biến các thư viện như BlockNote hay xử lý dữ liệu từ Obsidian cũng tốn nhiều công sức,
+tuy nhiên cũng không được đúng chính xác vì quá trình transform chỉ parse bằng text, không phải bằng cây ngôn ngữ.
 -->
 
 ---
