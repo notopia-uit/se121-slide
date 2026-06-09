@@ -138,16 +138,7 @@ hideInToc: true
   - `update(state, action)`: applies an action to update the state
 - Requires commutativity, associativity, idempotence
 
-<!--
-State-based CRDTs (hoặc CvRDTs) được định nghĩa bởi hai kiểu,
-một kiểu cho trạng thái cục bộ và một kiểu cho các hành động trên trạng thái, cùng với ba hàm:
-- một hàm để tạo ra trạng thái khởi tạo
-- một hàm hợp nhất các trạng thái
-- và một hàm để áp dụng một hành động nhằm cập nhật trạng thái
-
-State-based CRDTs đơn giản là gửi toàn bộ trạng thái cục bộ của chúng đến các bản sao khác mỗi khi có cập nhật,
-nơi trạng thái mới nhận được sẽ được hợp nhất (merge) vào trạng thái cục bộ.
--->
+::right::
 
 #### Operation-based CRDTs (CmRDTs)
 
@@ -158,6 +149,15 @@ nơi trạng thái mới nhận được sẽ được hợp nhất (merge) vào
 - Requires commutativity, associativity, and reliable delivery of operations
 
 <!--
+State-based CRDTs (hoặc CvRDTs) được định nghĩa bởi hai kiểu,
+một kiểu cho trạng thái cục bộ và một kiểu cho các hành động trên trạng thái, cùng với ba hàm:
+- một hàm để tạo ra trạng thái khởi tạo
+- một hàm hợp nhất các trạng thái
+- và một hàm để áp dụng một hành động nhằm cập nhật trạng thái
+
+State-based CRDTs đơn giản là gửi toàn bộ trạng thái cục bộ của chúng đến các bản sao khác mỗi khi có cập nhật,
+nơi trạng thái mới nhận được sẽ được hợp nhất (merge) vào trạng thái cục bộ.
+
 Các CRDT dựa trên thao tác (CmRDTs) được định nghĩa mà không cần hàm hợp nhất (merge).
 Thay vì truyền trạng thái, các hành động cập nhật được truyền trực tiếp đến các bản sao và được áp dụng.
 
