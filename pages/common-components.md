@@ -25,13 +25,10 @@ Shadcn UI built trên Radix UI + Tailwind CSS. Không phải package — copy co
 hideInToc: true
 layout: figure
 figureUrl: ui-landing-page.png
-figureCaption: 'Giao diện sử dụng Shadcn Components'
+figureCaption: 'Interface built with Shadcn UI components'
 ---
 
-### Interface using Shadcn Components
-
 ---
-
 hideInToc: true
 ---
 
@@ -41,20 +38,21 @@ hideInToc: true
 
 #### Advantages ✅
 
-- **Accessibility** — built-in via Radix UI (keyboard nav, focus management, ARIA)
-- **Fully customizable** — copy code, modify directly, no API lock-in
-- **Tree-shakeable** — only bundle components you import
-- **Flexible theming** — CSS variables for easy dark/light mode
-- **Version updates** — CLI update command available
+- **Accessibility**
+- **Fully customizable**
+- **Tree-shakeable**
+- **Flexible theming**
+- **Version updates**
 
 #### Disadvantages ❌
 
-- **Missing complex components** — table, tree view, data grid must be built manually
-- **Bundle size** — depends on number of components used
-- **Radix dependency** — API changes require component updates
-- **Not a traditional library** — developers need to understand structure for deep customization
+- **Missing complex components**
+- **Bundle size**
+- **Radix dependency**
+- **Not a traditional library**
 
 <!--
-Ưu điểm: Accessibility nhờ Radix UI, customizable hoàn toàn, tree-shakeable, theming linh hoạt qua CSS variables, có CLI update.
-Nhược điểm: Không có sẵn complex components, bundle size phụ thuộc số components, phụ thuộc Radix UI API, không phải library truyền thống — dev cần hiểu cấu trúc.
+Advantages: Accessibility sẵn có nhờ Radix UI (keyboard nav, focus management, ARIA). Customizable hoàn toàn — copy code, sửa trực tiếp, không bị lock vào API. Tree-shakeable — chỉ bundle components được import. Theming linh hoạt qua CSS variables, dễ dàng dark/light mode. Có CLI update command.
+
+Disadvantages: Không có sẵn complex components (table, tree view, data grid) — phải tự build. Bundle size phụ thuộc vào số components dùng. Phụ thuộc vào Radix UI — nếu Radix thay đổi API, components phải update theo. Không phải component library truyền thống — dev cần hiểu cấu trúc để custom sâu.
 -->

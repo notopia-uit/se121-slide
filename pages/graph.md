@@ -50,17 +50,17 @@ hideInToc: true
 
 ### Key Features
 
-- **Depth control** — limit steps from center node
-- **Drag & Zoom** — move nodes, zoom canvas
-- **Hover highlight** — highlight adjacent nodes and links
-- **Tag filtering** — show/hide tag nodes
-- **Radial layout** — circular arrangement option
-- **Theme-aware** — reads CSS variables for Pixi.js
-- **Click navigation** — click node to navigate
-- **Visited tracking** — marks viewed nodes via localStorage
+- **Depth control**
+- **Drag & Zoom**
+- **Hover highlight**
+- **Tag filtering**
+- **Radial layout**
+- **Theme-aware**
+- **Click navigation**
+- **Visited tracking**
 
 <!--
-Depth control giới hạn số bước từ node trung tâm. Drag & Zoom kéo node, zoom canvas. Hover highlight làm nổi bật node và link lân cận. Theme-aware tự động đọc CSS variables cho Pixi.js.
+Depth control: giới hạn số bước từ node trung tâm (local graph). Drag & Zoom: kéo thả node, zoom canvas. Hover highlight: làm nổi bật node và link lân cận. Tag filtering: ẩn/hiện tag nodes. Radial layout: tùy chọn bố trí hình tròn. Theme-aware: tự động đọc CSS variables, chuyển sang hex cho Pixi.js. Click navigation: click node để chuyển trang. Visited tracking: đánh dấu node đã xem qua localStorage.
 -->
 
 ---
@@ -69,13 +69,13 @@ hideInToc: true
 
 ### Port from Quartz (CommonJS → React)
 
-| Quartz (original)                        | Notopia (React)                                      |
-| ---------------------------------------- | ---------------------------------------------------- |
-| `graph.inline.ts` runs after DOM load    | `graph-render.ts` pure function, called from `useEffect` |
-| `data-cfg` attribute + `JSON.parse`      | Typed `D3Config` config, passed via props            |
-| `window.spaNavigate` for click           | `onNodeClick` callback prop                          |
-| `fetchData` global variable              | `GraphData` from React Query                         |
-| No cleanup lifecycle                     | Cleanup function in `useEffect` return               |
+| Quartz (original)                     | Notopia (React)                                          |
+| ------------------------------------- | -------------------------------------------------------- |
+| `graph.inline.ts` runs after DOM load | `graph-render.ts` pure function, called from `useEffect` |
+| `data-cfg` attribute + `JSON.parse`   | Typed `D3Config` config, passed via props                |
+| `window.spaNavigate` for click        | `onNodeClick` callback prop                              |
+| `fetchData` global variable           | `GraphData` from React Query                             |
+| No cleanup lifecycle                  | Cleanup function in `useEffect` return                   |
 
 <!--
 Điểm quan trọng: cleanup lifecycle — useEffect return cleanup function để tránh memory leak từ Pixi.js Application và animation loop.
@@ -91,7 +91,6 @@ figureCaption: 'Giao diện Graph'
 ### Graph Interface
 
 ---
-
 hideInToc: true
 ---
 
@@ -101,21 +100,22 @@ hideInToc: true
 
 #### Advantages ✅
 
-- **High performance** — Pixi.js WebGL handles hundreds of nodes
-- **Natural force layout** — D3 simulation creates intuitive arrangement
-- **Rich interaction** — drag, zoom, hover, click navigation
-- **Theme-aware** — automatic dark/light mode via CSS variables
-- **Reusable** — single Graph component for local and global graphs
+- **High performance**
+- **Natural force layout**
+- **Rich interaction**
+- **Theme-aware**
+- **Reusable**
 
 #### Disadvantages ❌
 
-- **3 heavy libraries** — D3, Pixi.js, Tween.js (large bundle size)
-- **GPU requirement** — Pixi.js needs WebGL/WebGPU support
-- **Not fully responsive** — requires manual resize handling
-- **Complex maintenance** — multiple rendering layers
-- **Memory leak risk** — Pixi.js Application and animation loop need careful cleanup
+- **3 heavy libraries**
+- **GPU requirement**
+- **Not fully responsive**
+- **Complex maintenance**
+- **Memory leak risk**
 
 <!--
-Ưu điểm: WebGL hiệu suất cao, D3 force layout trực quan, tương tác phong phú, theme-aware, tái sử dụng được.
-Nhược điểm: 3 thư viện nặng, cần GPU, không responsive hoàn toàn, maintenance khó, nguy cơ memory leak.
+Advantages: Pixi.js WebGL render hiệu suất cao, phù hợp hàng trăm node. D3 simulation giúp bố trí node trực quan. Tương tác phong phú: drag, zoom, hover, click navigation. Theme-aware tự động theo dark/light mode qua CSS variables. Graph component dùng được cho cả local graph và global graph.
+
+Disadvantages: Phụ thuộc 3 thư viện nặng (D3, Pixi.js, Tween.js) — bundle size lớn. Pixi.js cần WebGL/WebGPU support. Không responsive hoàn toàn, cần resize handling. Maintenance khó do nhiều layer rendering. Pixi.js Application và animation loop cần cleanup kỹ — nguy cơ memory leak.
 -->

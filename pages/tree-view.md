@@ -68,29 +68,19 @@ hideInToc: true
 
 ### Key Features
 
-- **Drag & Drop** — move folders/notes between directories
-- **Rename** — inline rename via context menu
-- **Search** — find nodes by name, auto-expand path
-- **Context Menu** — New Note, New Folder, Move to Trash
-- **Keyboard Navigation** — arrow keys, Enter to open
-- **Auto Expand** — expand parent when creating items
-- **Real-time sync** — subscribe workspace events → invalidate query
+- **Drag & Drop**
+- **Rename**
+- **Search**
+- **Context Menu**
+- **Keyboard Navigation**
+- **Auto Expand**
+- **Real-time sync**
 
 <!--
-Drag & Drop kéo thả folder/note giữa các thư mục. Rename inline với context menu. Search tự động expand path. Real-time sync subscribe workspace events và invalidate query.
+Drag & Drop: kéo thả folder/note giữa các thư mục. Rename: inline rename với context menu. Search: tìm kiếm node theo tên, auto expand path. Context Menu: New Note, New Folder, Move to Trash. Keyboard Navigation: arrow keys, Enter để mở note. Auto Expand: expand parent khi tạo item mới. Real-time sync: subscribe workspace events → invalidate query.
 -->
 
 ---
-hideInToc: true
-layout: figure
-figureUrl: ui/workspace-page.png
-figureCaption: 'Giao diện Tree View'
----
-
-### Tree View Interface
-
----
-
 hideInToc: true
 ---
 
@@ -100,21 +90,22 @@ hideInToc: true
 
 #### Advantages ✅
 
-- **Feature-rich API** — drag & drop, rename, search, keyboard nav out of the box
-- **Flexible custom render** — `renderItem`, `renderItemArrow` for custom styling
-- **Controlled/Uncontrolled** — supports both modes
-- **TreeDataProvider** — async data loading, lazy loading
-- **TypeScript compatible** — full type safety
+- **Feature-rich API**
+- **Flexible custom render**
+- **Controlled/Uncontrolled**
+- **TreeDataProvider**
+- **TypeScript compatible**
 
 #### Disadvantages ❌
 
-- **Not Shadcn compatible** — must use `ControlledTreeEnvironment`
-- **Bundle size** — ~15-20kB gzipped
-- **Low popularity** — fewer contributors, less community support
-- **Learning curve** — ControlledTreeEnvironment API is complex
-- **Accessibility** — weaker than Radix UI components
+- **Not Shadcn compatible**
+- **Bundle size**
+- **Low popularity**
+- **Learning curve**
+- **Accessibility**
 
 <!--
-Ưu điểm: API giàu tính năng, custom render linh hoạt, hỗ trợ controlled/uncontrolled, có TreeDataProvider cho lazy loading, full TypeScript.
-Nhược điểm: Không compatible với Shadcn, bundle size ~15-20kB, thư viện ít phổ biến, learning curve cao, accessibility không mạnh bằng Radix.
+Advantages: API giàu tính năng — drag & drop, rename, search, keyboard nav out-of-the-box. Custom render linh hoạt — renderItem, renderItemArrow cho phép styling tùy ý. Hỗ trợ cả Controlled và Uncontrolled mode. TreeDataProvider cho phép async load data, lazy loading. Full TypeScript type safety.
+
+Disadvantages: Không compatible với Shadcn — phải dùng ControlledTreeEnvironment thay vì Shadcn styling thuần. Bundle size ~15-20kB gzipped. Thư viện ít phổ biến, ít contributor. ControlledTreeEnvironment API khá phức tạp — learning curve cao. Accessibility không mạnh bằng Radix UI components.
 -->
