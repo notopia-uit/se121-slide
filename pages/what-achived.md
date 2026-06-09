@@ -35,13 +35,13 @@ hideInToc: true
 ]" />
 
 <!--
-Về sản phẩm, nhóm đã hoàn thiện hệ thống với đầy đủ các tính năng như cộng tác thời gian thực, quản lý không gian làm việc.
+Về sản phẩm, chúng em đã hoàn thiện hệ thống với đầy đủ các tính năng như cộng tác thời gian thực, quản lý không gian làm việc.
 
 Về kiến trúc, hệ thống được xây dựng theo mô hình Microservices, hỗ trợ Event-Driven và áp dụng Contract-First API giúp frontend/backend phát triển song song.
 Sử dụng ngôn ngữ Go cho backend service note, trong khi NestJS cho các dịch vụ liên quan đến xử lý document, vi công nghệ BlockNote và các thư viện liên quan đến editor ở JS.
 
-Nhóm cũng áp dụng các công cụ hiện đại như Nx Monorepo để quản lý code và Authentik cho SSO.
-Nhóm đặc biệt dành thời gian để nghiên cứu cách tổ chức monorepo với Nx, giúp tối ưu hóa quy trình phát triển, CI. Nx giúp tự nhận biết project nào bị ảnh hưởng khi có thay đổi, từ đó chỉ build/test những phần cần thiết, tiết kiệm thời gian đáng kể.
+CHúng em có áp dụng các công cụ như Nx Monorepo để quản lý code và Authentik cho SSO.
+Đặc biệt, chúng em dành thời gian để nghiên cứu cách tổ chức monorepo với Nx, giúp tối ưu hóa quy trình phát triển, CI. Nx giúp tự nhận biết project nào bị ảnh hưởng khi có thay đổi, từ đó chỉ build/test những phần cần thiết, tiết kiệm thời gian đáng kể.
 -->
 
 ---
@@ -74,7 +74,6 @@ Hệ thống có sử dụng Go nên xử lý tạo graph là đã tối ưu. Re
 Quy trình DevOps được tối ưu hóa tốt với Nx và giải pháp cache nhà trồng, giúp giảm thời gian build từ 25 phút xuống còn 30 giây trong trường hợp tối ưu.
 
 Ngoài ra việc setup editor để làm việc trong monorepo cũng phức tạp.
-Chúng em đã phải tìm hiểu về language server protocol, cách cấu hình vì một số language server hỗ trợ monorepo, cần tinh chỉnh.
 
 Mã nguồn cũng rất dễ bảo trì nhờ áp dụng các pattern như Clean Architecture và CQRS. Sử dụng SQL thuần, cùng SQL giúp linh hoạt hơn so với ORM.
 -->
@@ -161,7 +160,7 @@ hideInToc: true
 ]" />
 
 <!--
-Trong tương lai, nhóm dự kiến sẽ tối ưu và mở rộng tính năng (publish, unpublish a note/workspace), cải thiện UI/UX,
+Trong tương lai, chúng em dự kiến sẽ tối ưu và mở rộng tính năng (publish, unpublish a note/workspace), cải thiện UI/UX,
 cũng như tích hợp thêm AI vào editor để hỗ trợ người dùng tốt hơn.
 
 Refactor kiến trúc frontend...
