@@ -130,6 +130,7 @@ hideInToc: true
 <!--
 Trải nghiệm UI UX chưa được tối ưu, vẫn còn nhiều điểm chưa thân thiện với người dùng.
 Chưa hoàn toàn thiết lập production ready, như health check endpoint chỉ có ở các service go, chưa có ở NestJS hay NextJS web.
+Cố gắng fix lỗi về không thống nhất ID giữa các service khi seed data.
 -->
 
 ---

@@ -31,6 +31,10 @@ hideInToc: true
 ---
 
 ---
+src: ./pages/dev-process.md
+---
+
+---
 src: ./pages/collaborative-solution.md
 ---
 
@@ -44,10 +48,6 @@ src: ./pages/technology.md
 
 ---
 src: ./pages/setup.md
----
-
----
-src: ./pages/dev-process.md
 ---
 
 ---
