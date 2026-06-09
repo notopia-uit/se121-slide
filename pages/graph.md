@@ -48,25 +48,6 @@ Luồng render: D3 tính toán → Pixi.js vẽ → animation loop cập nhật 
 hideInToc: true
 ---
 
-### Key Features
-
-- **Depth control**
-- **Drag & Zoom**
-- **Hover highlight**
-- **Tag filtering**
-- **Radial layout**
-- **Theme-aware**
-- **Click navigation**
-- **Visited tracking**
-
-<!--
-Depth control: giới hạn số bước từ node trung tâm (local graph). Drag & Zoom: kéo thả node, zoom canvas. Hover highlight: làm nổi bật node và link lân cận. Tag filtering: ẩn/hiện tag nodes. Radial layout: tùy chọn bố trí hình tròn. Theme-aware: tự động đọc CSS variables, chuyển sang hex cho Pixi.js. Click navigation: click node để chuyển trang. Visited tracking: đánh dấu node đã xem qua localStorage.
--->
-
----
-hideInToc: true
----
-
 ### Port from Quartz (CommonJS → React)
 
 | Quartz (original)                     | Notopia (React)                                          |

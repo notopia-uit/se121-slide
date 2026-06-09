@@ -66,24 +66,6 @@ Model dữ liệu dạng flat: TreeData là Record, mỗi TreeItem có index, da
 hideInToc: true
 ---
 
-### Key Features
-
-- **Drag & Drop**
-- **Rename**
-- **Search**
-- **Context Menu**
-- **Keyboard Navigation**
-- **Auto Expand**
-- **Real-time sync**
-
-<!--
-Drag & Drop: kéo thả folder/note giữa các thư mục. Rename: inline rename với context menu. Search: tìm kiếm node theo tên, auto expand path. Context Menu: New Note, New Folder, Move to Trash. Keyboard Navigation: arrow keys, Enter để mở note. Auto Expand: expand parent khi tạo item mới. Real-time sync: subscribe workspace events → invalidate query.
--->
-
----
-hideInToc: true
----
-
 ### Advantages & Disadvantages
 
 <br/>
