@@ -34,13 +34,6 @@ layout: two-cols-header
 
 ---
 hideInToc: true
-layout: two-cols-header
----
-
-### Progress
-
----
-hideInToc: true
 layout: figure
 figureUrl: github-pr-with-ai.png
 figureCaption: 'GitHub PR with AI'
